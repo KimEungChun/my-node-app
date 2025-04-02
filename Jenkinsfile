@@ -1,8 +1,11 @@
 pipeline {
-    agent {
-        any
-        retries 2 // 젠킨스 재시작 시 최대 2번 재시도
+    agent any
+
+    options {
+        retry(2) // Jenkins 재시작 등으로 실패 시 전체 재시도
+        timeout(time: 30, unit: 'MINUTES') // 전체 파이프라인 타임아웃 (선택)
     }
+
 
     environment {
         APP_IMAGE_NAME   = "my-node-app"
