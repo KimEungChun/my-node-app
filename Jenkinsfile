@@ -57,9 +57,9 @@ pipeline {
                                     ${REMOTE_USER}@${REMOTE_HOST}:/home/${REMOTE_USER}/
 
                                 # 3) 원격 서버에서 기존 리소스 정리 및 새 컨테이너 실행
-                                ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_HOST} << 'EOF'
+                                ssh -o StrictHostKeyChecking=no ${REMOTE_USER}@${REMOTE_HOST} << "EOF"
                                     # 기존 이미지 정리 (옵션)
-                                    docker images -q ${APP_IMAGE_NAME}:latest | grep -v "^$" | xargs -r docker rmi -f || true
+                                    docker images -q ${APP_IMAGE_NAME}:latest | grep -v "^\$" | xargs -r docker rmi -f || true
 
                                     # 도커 이미지 로드
                                     docker load -i /home/${REMOTE_USER}/${APP_IMAGE_NAME}.tar
