@@ -7,7 +7,7 @@ pipeline {
         REMOTE_USER      = "ubuntu"
         REMOTE_HOST      = "43.203.251.165"
     }
-
+#
     stages {
         stage('Checkout') {
             steps {
@@ -20,7 +20,7 @@ pipeline {
                 sh "docker build -t ${APP_IMAGE_NAME}:latest ."
             }
         }
-
+    #
         stage('Deploy to Remote Server') {
             steps {
                 sshagent (credentials: ['ssh_remote_server']) {
