@@ -7,7 +7,7 @@ pipeline {
         REMOTE_USER      = "ubuntu"
         REMOTE_HOST      = "43.203.251.165"
     }
-########
+
     stages {
         stage('Checkout') {
             steps {
