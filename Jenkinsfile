@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { dockerfile } // Dockerfile을 사용
 
     environment {
         APP_IMAGE_NAME   = "my-node-app"
@@ -17,8 +17,8 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh "echo 'Docker image built from Dockerfile'" //확인용
-                sh "docker build -t ${APP_IMAGE_NAME}:latest ."
+                 //Dockerfile을 사용하기 때문에 docker build 명령어는 필요없어짐
+                sh "echo 'Docker image built from Dockerfile'" // 확인용 (제거 가능)
             }
         }
 
