@@ -5,7 +5,7 @@ pipeline {
         APP_IMAGE_NAME   = "my-node-app"
         APP_CONTAINER    = "my-node-container"
         REMOTE_USER      = "ubuntu"
-        REMOTE_HOST      = "1.2.3.4"
+        REMOTE_HOST      = "54.180.131.73"
     }
 
     stages {
