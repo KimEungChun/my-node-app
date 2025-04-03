@@ -9,6 +9,14 @@ pipeline {
     }
 
     stages {
+        stage('Test Docker') {
+            steps {
+                sh 'docker --version'
+            }
+        }
+    }
+
+    stages {
         stage('Checkout') {
             steps {
                 sh "echo 'Checked out the repository via Jenkinsfile'"
