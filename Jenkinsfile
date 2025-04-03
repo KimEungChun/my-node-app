@@ -17,6 +17,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
+                sh "echo 'Docker image built from Dockerfile'" //확인용
                 sh "docker build -t ${APP_IMAGE_NAME}:latest ."
             }
         }
